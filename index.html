@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>NKCollabAgency</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&family=JetBrains+Mono&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+body {
+  font-family: 'Inter', sans-serif;
+}
+.serif { font-family: 'Playfair Display', serif; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.gold { color: #D4AF37; }
+.bg-dark { background:#0a0a0a; }
+</style>
+
+</head>
+
+<body class="bg-white text-black">
+
+<!-- NAVBAR -->
+<nav class="sticky top-0 z-50 bg-white border-b border-black/10">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+    <div class="leading-none">
+      <div class="serif text-2xl">NK</div>
+      <div class="text-[0.5rem] tracking-[0.3em]">NKCOLLABAGENCY</div>
+    </div>
+
+    <div class="flex gap-8 text-xs tracking-[0.2em] uppercase">
+      <button onclick="scrollToSection('home')">Home</button>
+      <button onclick="scrollToSection('services')">Services</button>
+      <button onclick="scrollToSection('creators')">Creators</button>
+      <button onclick="scrollToSection('cases')">Case Studies</button>
+    </div>
+
+    <div class="flex gap-4">
+      <button onclick="scrollToSection('contact')" class="border px-4 py-2 text-xs">Join as Creator</button>
+      <button onclick="scrollToSection('contact')" class="bg-black text-white px-4 py-2 text-xs">Hire Agency</button>
+    </div>
+
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12">
+
+  <div>
+    <p class="tracking-[0.3em] text-xs text-[#D4AF37] mb-6">INQUIRIES</p>
+
+    <h1 class="serif text-6xl leading-tight">
+      Scale your <br>
+      <span class="gold italic">Influence.</span>
+    </h1>
+
+    <p class="mt-6 text-gray-600 max-w-md">
+      Join our exclusive roster of elite creators. Gain access to prestige brand partnerships and dedicated bespoke management.
+    </p>
+
+    <div class="mt-10 space-y-6">
+      <div>
+        <p class="serif text-lg">For Creators</p>
+        <p class="text-gray-500 text-sm">
+          Possess an engaged audience? Apply to join our curated roster.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <div id="contact" class="border p-10">
+    <h2 class="serif text-2xl mb-8 tracking-wide">CONNECT</h2>
+
+    <form onsubmit="submitForm(event)" class="space-y-6">
+
+      <div class="grid grid-cols-2 gap-6">
+        <input required placeholder="FIRST NAME" class="border-b p-2 outline-none">
+        <input required placeholder="LAST NAME" class="border-b p-2 outline-none">
+      </div>
+
+      <input required type="email" placeholder="EMAIL ADDRESS" class="w-full border-b p-2 outline-none">
+
+      <select class="w-full border-b p-2">
+        <option>Creator applying for roster</option>
+        <option>Brand inquiry</option>
+      </select>
+
+      <textarea placeholder="Message / Links" class="w-full border p-3 h-32"></textarea>
+
+      <button class="w-full bg-black text-white py-3 tracking-[0.2em]">
+        SUBMIT INQUIRY →
+      </button>
+
+    </form>
+  </div>
+
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="bg-dark text-white py-20 px-6">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="serif text-4xl mb-10">Bespoke Services</h2>
+
+    <div class="grid md:grid-cols-3 gap-10 text-sm">
+      <div>
+        <h3 class="gold mb-2">Brand Partnerships</h3>
+        <p class="text-white/60">Elite collaborations with global luxury brands.</p>
+      </div>
+      <div>
+        <h3 class="gold mb-2">Talent Management</h3>
+        <p class="text-white/60">Full-scale influencer growth strategy.</p>
+      </div>
+      <div>
+        <h3 class="gold mb-2">Campaign Strategy</h3>
+        <p class="text-white/60">Performance-driven campaigns.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREATORS -->
+<section id="creators" class="py-20 px-6 max-w-7xl mx-auto">
+  <h2 class="serif text-4xl mb-10">The Roster</h2>
+
+  <table class="w-full text-sm border">
+    <thead class="text-xs uppercase text-gray-500">
+      <tr>
+        <th class="p-3">Name</th>
+        <th>Handle</th>
+        <th>Followers</th>
+        <th>ER%</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="creatorTable"></tbody>
+  </table>
+</section>
+
+<!-- CASE STUDIES -->
+<section id="cases" class="bg-gray-100 py-20 px-6">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="serif text-4xl mb-10">Proven Results</h2>
+
+    <div class="grid md:grid-cols-3 gap-10">
+      <div class="border p-6">
+        <p class="mono text-xl">+320%</p>
+        <p class="text-gray-500">Engagement Growth</p>
+      </div>
+      <div class="border p-6">
+        <p class="mono text-xl">5M+</p>
+        <p class="text-gray-500">Reach Generated</p>
+      </div>
+      <div class="border p-6">
+        <p class="mono text-xl">120+</p>
+        <p class="text-gray-500">Campaigns Delivered</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white py-20 px-6">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10">
+
+    <div>
+      <div class="serif text-3xl">NK</div>
+      <p class="mt-4 text-white/60 text-sm">
+        Where Exceptional Creators Meet Prestige Brands.
+      </p>
+    </div>
+
+    <div>
+      <p class="text-white/40 text-xs mb-4">NAVIGATION</p>
+      <div class="space-y-2 text-sm">
+        <p onclick="scrollToSection('home')" class="cursor-pointer">Overview</p>
+        <p onclick="scrollToSection('services')" class="cursor-pointer">Services</p>
+        <p onclick="scrollToSection('creators')" class="cursor-pointer">Roster</p>
+      </div>
+    </div>
+
+    <div>
+      <p class="text-white/40 text-xs mb-4">CONTACT</p>
+      <div class="space-y-2 text-sm">
+        <p>neeraj@nkcollabagency.com</p>
+        <p>+91 75320 86807</p>
+        <p>New Delhi, India</p>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+const creators = [
+  { name:"Aarav Mehta", handle:"@aaravlux", followers:520000, er:4.2 },
+  { name:"Riya Kapoor", handle:"@riyastyle", followers:85000, er:6.8 }
+];
+
+function renderCreators(){
+  const table = document.getElementById("creatorTable");
+  table.innerHTML = creators.map((c,i)=>`
+    <tr class="border-t">
+      <td class="p-3">${c.name}</td>
+      <td>${c.handle}</td>
+      <td>${c.followers.toLocaleString()}</td>
+      <td>${c.er}%</td>
+      <td><button onclick="showStats(${i})" class="text-[#D4AF37]">View</button></td>
+    </tr>
+  `).join("");
+}
+
+function showStats(i){
+  const c = creators[i];
+  alert(
+    `${c.name}\nReach: ${Math.round(c.followers*0.4)}\nConversions: ${Math.round(c.followers*(c.er/100)*0.02)}`
+  );
+}
+
+function scrollToSection(id){
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+
+function submitForm(e){
+  e.preventDefault();
+  alert("Inquiry Submitted Successfully!");
+}
+
+renderCreators();
+</script>
+
+</body>
+</html>
